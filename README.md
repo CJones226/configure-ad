@@ -293,7 +293,60 @@ We are going to create two new organizational units, one called _EMPLOYEES and a
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/bc0402d9-834e-48b7-b8c4-9d8e2fede314" height="60%" width="60%"
 </p>
 <p>
-
+Next we need to add a new User that we can make the admin.
+</p>
+<p>
+<h4>New User</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/b2c8408f-85ae-42a8-97e2-43098fc79068" height="60%" width="60%"/>
+<p>
+Left click inside the _EMPLOYEES Organizational Unit and then new, and user.
+</p>
+<p>
+<h4>John Doe</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/0fe9ab92-9d0a-4606-9d10-cb267a3ec79d" height="60%" width="60%"/>
+</p>
+<p>
+Add a user and call it whatever you'd like. I decided with John Doe. This will be the one we promote to administrator.
+</p>
+<p>
+<h4>Password</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/91e2c06a-8f9e-40fc-b338-1368a534b561" height="60%" width="60%"/>
+</p>
+<p>
+Set the password, I did Password1. No need to have the user change the password on the next login, because we will obviously be the ones using it.
+</p>
+<p>
+<h4>User Properties</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/c1fb7b15-cdcc-47ae-a829-b2f6f3c73046" height="60%" width="60%"/>
+</p>
+<p>
+Next right click on the user you created and select properties
+</p>
+<p>
+<h4>Domain Admins</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/ed20334f-bcce-40ad-9133-9d73a1ddd148" height="60%" width="60%"
+</p>
+<p>
+Select 'Member Of' 'Add' then type 'Domain Admins' and then ok
+</p>
+<p>
+<h4>John Doe Login</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/d66ba841-7106-450d-afb9-1ee6ce998619" height="60%" width="60%"/>
+</p>
+<p>
+Now that we have done that John Doe can now login to the Client Computer using the credentials we created: "example.com\john_admin" "Password1" if done correctly it should login with no problem. We have successfully added an Admin to the Domain
 </p>
 <br />
 
@@ -302,26 +355,73 @@ We are going to create two new organizational units, one called _EMPLOYEES and a
 Now we need to go through the process of putting our Client Computer onto the Domain so it can access Active Directory
 </p>
 <p>
-<h4>New User</h4>
+<h4>Grab DomainController Private IP</h4>
 </p>
 <p>
-<img src="https://github.com/CJones226/configure-ad/assets/158533476/b9feadc7-d87c-4ea8-833e-72dc636db4ff" height="60%" width="60%"/>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/269c03bb-38ff-462b-9d1c-b8795fcbab9f" height="60%" width="60%"/>
 </p>
 <p>
-Navigate to the new _EMPLOYEES Organizational Units and add a new user
+We are going to set the DNS of Client to the IP of the Domain Controller, to do that we need to have the Private IP Address and you can find it here.
+</p>
+<h4>Changing Client DNS</h4>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/ee44df05-db8b-41d0-b370-850e8a4e56ea" height="60%" width="60%"/>
 </p>
 <p>
-<h4>John Doe</h4>
+Navigate in Azure to Client\Network settings\client512_z1\DNS servers then select custom and add the IP address of the Domain Controller
 </p>
 <p>
-<img src="https://github.com/CJones226/configure-ad/assets/158533476/ad0e7fba-288e-4c45-bc8d-26edc8f6c83c" height="60%" width="60%"/>
+<h4>Client System</h4>
 </p>
 <p>
-Add a new user named whatever you want
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/fd3f232a-ff05-4c25-bc40-3c0111a02b0b" height="60%" width="60%"/>
+</p>
+<p>
+Inside of the Client virtual machine, right click on the windows icon and select 'System' from the menu.
+</p>
+<p>
+<h4>Rename PC</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/df1f924d-c359-4056-9741-2e6f804b58bd" height="60%" width="60%"/>
+</p>
+<p>
+Inside of "System" select 'Rename this PC (Advanced)' on the right hand column
+</p>
+<p>
+<h4>Domain Change</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/2c020c25-aecd-4c7d-a462-b550066476f7" height="60%" width="60%"/>
+</p>
+<p>
+Within the panel 'Computer Name' click 'Change' nect to "To rename this computer or change its domain or workgroup". Set the domain to the one we created in the beginning, for me it is example.com. Then login with the admin we created: "example.com\john_admin" "Password1"
+</p>
+<p>
+<h4>Restart</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/01c86a05-e638-4c73-99ae-5aee0be72f2c" height="60%" width="60%"/>
+</p>
+<p>
+You will need to restart the Virtual Mahcine for this to take effect, it may take some time.
+</p>
+<p>
+<h4>Checking Domain Controller</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/74be5e64-d950-45c2-aa4e-92242ea6f9ae" height="60%" width="60%"/>
+</p>
+<p>
+While the other VM resets, head on over to Domain Controller and navigate to "Active Directory Users and Computers" select "example.com" then "Computers" and ensure that "Client" is within the Organizational Unit. If it is, then you have successfully added Client to the Domain. Next time you login to client you will use john_admin.
+</p>
+<p>
+<h4>Credentials</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/4291a3f3-209f-4530-895a-dd68ffa65db8" height="60%" width="60%"/>
 </p>
 <br />
-
-
 
 
 

@@ -53,7 +53,7 @@ Next you can create the Domain Controller, call it whatever you like, but to kee
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/8bcdb894-37b3-4804-8511-7d21494c0b65" height="60%" width="60%"/>
 </p>
 <p>
-I set the username as 'DC-1' and the password as '@dm1n1strat0r' to make them easy to remember when we are loggin in with Remote Desktop Connection. Alternatively you could open a notepad and write down all the information.
+I set the username as 'DC-1' and the password as '@dm1n1strat0r' to make them easy to remember when we are loggin in with Remote Desktop Connection. Alternatively you could open a notepad and write down all the information. Then you can review and create the machine.
 </p>
 <p>
 <h4>Configuring IP</h4>
@@ -64,7 +64,29 @@ I set the username as 'DC-1' and the password as '@dm1n1strat0r' to make them ea
 <p>
 Once the Virtual Machine is set up it is necessary to set the IP Configuration to static instead of dynamic, so that the IP will never change. This makes it easy for the Client Computer to connect to the Domain Controller with the same IP every single time. Your path to this setting is Home\DomainController\Network settings\domaincontroller631_z1\IP configurations\ipconfig1
 </p>
+<p>
+<h4>Client Computer</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/04cbf333-1118-46ec-9c35-62e1f0d8ca31" height="60%" width="60%"/>
+</p>
+<p>
+Create the Client Computer, this will be the machine that we will add to the Domain, which will represent any computer within a company connecting to a single domain. Add it to the same Resource Group as DomainController, and I called mine 'Client'. This machine will run a regular version of Windows 10. Again ensure that this machine also has at least 2 vcpus.
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/1ff18143-d5b4-46c3-8bec-307d1913518c" height="60%" width="60%"/>
+</p>
+<p>
+I made the username 'Client' matching the Virtual Machine Name, and the password is the same as DomainController: @dm1n1strat0r
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/dd735c5c-8601-4307-bece-bfb25a5182ce" height="60%" width="60%"/>
+</p>
+<p>
+Before we create this machine we need to make sure that the Virtual Network is connected to the DomainController, so be sure to navigate to the Network Tab and change the highlighted setting. It will be whatever you named your Domain Controller followed by "-vnet" for me it is "DomainController-vnet". Without this the Virtual Machines would be on two different networks, only able to interact on an external network instead of an internal one.
+</p>
 <br />
+
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>

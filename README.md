@@ -177,10 +177,174 @@ Return back to the Client computer and watch as the ping begins to succeed, this
 </p>
 <br />
 
+<h2>Installing Active Directory</h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+To install Active Directory you want to be in the DomainController machine and in the Server Manager App.
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<h4>Add Roles and Features</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/8ebfd262-91b4-4866-99d0-4e6c1937b8fa" height="60%" width="60%"/>
+</p>
+<p>
+On the home page of Server Manager there is a "Add Roles and Features" button, select it. Once inside click 'next until you can select the services you want to install, here you will select "Active Directory Domain Services". Then you will click on Add Features and install.
+</p>
+<p>
+<h4>Promote Server to Domain Controller</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/aca174d1-e4f2-4884-a9d0-1b40ce28a9e6" height="60%" width="60%"/>
+</p>
+<p>
+In the upper right hand corner of Server Manager there will be a little flag with a one next to it. Click on that and select 'Promote this server to a domain controller'.
+</p>
+<p>
+<h4>Add New Forest</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/b4e1af31-6cbe-4a7a-8912-3e80c74b914d" height="60%" width="60%"/>
+</p>
+<p>
+Next you will want to add a new forest, and call the root domain name whatever you want. For ease of use, I called mine 'example.com'.
+</p>
+<p>
+<h4>Set Password</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/9b1f1202-79a9-47b8-9f23-f605bc92fb9c" height="60%" width="60%"/>
+</p>
+<p>
+Next we will set the password, but it will not be that important as we will not use it again in this project. However, if you were to use this in an actual setting the password would be important. In this case i made it Password1
+</p>
+<p>
+<h4>DNS Delegation</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/d414538a-d2a2-4d30-81f3-05f58dd07049" height="60%" width="60%"/>
+</p>
+<p>
+When you come to this portion of the promotion you want to deselect this option and continue.
+</p>
+<p>
+<h4>NetBIOS Population</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/020d568a-b11f-435e-802b-02724776e336" height="60%" width="60%"/>
+</p>
+<p>
+When you get to this screen it may take a moment for the blank box to populate with the proper name, **DO NOT** enter any other information into the box and then click next.
+</p>
+<p>
+<h4>AD DS Database</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/ce3b840c-4161-49d2-a6c1-e9983da4bf6e" height="60%' width="60%"/>
+</p>
+<p>
+This page should auto populate as well, do not select any options and click next.
+</p>
+<p>
+<h4>Install</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/25f1d7ac-2303-4afc-a91b-2e01d2431469" height="605" width="60%"/>
+</p>
+<p>
+Now that all that is done you can click install. When it begins it may take a while to complete, but once done it will become a proper Domain Controller. The system may need to restart after this, you will just have to log back in afterwards. This time using the Domain we just created.
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/a6fafa1b-1245-43f4-9f81-4f2f9122fb97" heigt="60%" width="60%"/>
 </p>
 <br />
+
+<h2>Create Domain Administrator</h2>
+<p>
+Now we can add a user who will be the admin on the Domain, to do that we need to use Active Directory Users and Computers.
+</p>
+<p>
+<h4>Active Directory Users and Computers</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/19548dac-c5d1-45c2-889f-7b12ea847bb6" height="60%" width="60%"/>
+</p>
+<p>
+<h4>Add Organizational Units</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/8c0eaa34-803a-47aa-b3b5-aff3dc9de443" height="60%" width="60%"/>
+</p>
+<p>
+Once you make it into user and computers you will want to selet the file with the name of your domain on it. In my case that would be 'example' right click on it and select new and then organizational unit.
+</p>
+<p>
+<h4>Employees and Users</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/224ab3f5-3bdb-4238-9177-f9ecec0b8ba8" height="60%" width="60%"/>
+</p>
+<p>
+We are going to create two new organizational units, one called _EMPLOYEES and another called _ADMINS
+</p>
+<p>
+<h4>_EMPLOYEES _ADMINS</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/bc0402d9-834e-48b7-b8c4-9d8e2fede314" height="60%" width="60%"
+</p>
+<p>
+
+</p>
+<br />
+
+<h2>Adding Client to the Domain</h2>
+<p>
+Now we need to go through the process of putting our Client Computer onto the Domain so it can access Active Directory
+</p>
+<p>
+<h4>New User</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/b9feadc7-d87c-4ea8-833e-72dc636db4ff" height="60%" width="60%"/>
+</p>
+<p>
+Navigate to the new _EMPLOYEES Organizational Units and add a new user
+</p>
+<p>
+<h4>John Doe</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/ad0e7fba-288e-4c45-bc8d-26edc8f6c83c" height="60%" width="60%"/>
+</p>
+<p>
+Add a new user named whatever you want
+</p>
+<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

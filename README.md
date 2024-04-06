@@ -128,7 +128,7 @@ Now we need the Public IP of Client so we can connect using Remote Desktop Conne
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/8efebe8f-8950-42f8-9ce2-55d940df630c" height="60%" width="60%"/>
 </p>
 <p>
-Once you find that you can copy the IP into Remote Desktop Connection. This app is found on your personal Windows Computer, if you are using a Mac you will need to install Microsoft Remote Desktop.
+Once you find that you can copy the IP into Remote Desktop Connection. This app is found on your personal Windows Computer, if you are using a Mac you will need to install Microsoft Remote Desktop. When you finish entering the IP address select connect.
 </p>
 <p>
 <h4>Login</h4>
@@ -137,7 +137,7 @@ Once you find that you can copy the IP into Remote Desktop Connection. This app 
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/145b55d6-ee78-4df0-a4b0-f55514cd1e1f" height="60%" width="60%"
 </p>
 <p>
-When you finish entering the IP address select connect. Now that you are inside the VM you can setup the OS, just turn off all settings and continue.
+Click on sign in with different user, and enter the credentials we created before. For me it is username: "Client" with the password: "@dm1n1strat0r" Now that you are inside the VM you can setup the OS, just turn off all settings and continue.
 </p>
 <p>
 <h4>Pinging DomainController</h4>

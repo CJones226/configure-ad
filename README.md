@@ -101,7 +101,7 @@ Before we create this machine we need to make sure that the Virtual Network is c
 
 <h2>Allowing Local Network Interactions</h2>
 <p>
-Before we can allow the Netowrk Interactions we need to know what the Private IP Address of the DomainController is. Navigate to DomainController\Network settings\Private IP address. This is the IP that you will ping within the Client Computer.
+Before we can allow the Netowrk Interactions we need to know what the Private IP Address of the DomainController is.
 </p>
 <p>
 <h4>Domain Controller Private IP</h4>
@@ -110,7 +110,7 @@ Before we can allow the Netowrk Interactions we need to know what the Private IP
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/d892ea56-158c-4d81-9bf2-b13c6669125c" height="60%" width="60%"/>
 </p>
 <p>
-After you have the private IP Address of the DomainController you should then find the Public IP of Client so you can connect using Remote Desktop Connection.
+Navigate to DomainController\Network settings\Private IP address. This is the IP that you will ping within the Client Computer.
 </p>
 <p>
 <h4>Client Public IP</h4>
@@ -119,7 +119,7 @@ After you have the private IP Address of the DomainController you should then fi
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/7ef93632-5e2d-4bd7-ad57-cac0ce9fdc94" height="60%" width=60%"/>
 </p>
 <p>
-Once you find that you can copy the IP into Remote Desktop Connection. This app is found on your personal Windows Computer, if you are using a Mac you will need to install Microsoft Remote Desktop.
+After you have the private IP Address of the DomainController you should then find the Public IP of Client so you can connect using Remote Desktop Connection.
 </p>
 <p>
 <h4>Remote Desktop Connection</h4>
@@ -128,7 +128,7 @@ Once you find that you can copy the IP into Remote Desktop Connection. This app 
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/8efebe8f-8950-42f8-9ce2-55d940df630c" height="60%" width="60%"/>
 </p>
 <p>
-Then click okay and sign in with a different user, and enter the user you created in Azure. The user I created is called Client, with the password: @dm1n1strat0r.
+Once you find that you can copy the IP into Remote Desktop Connection. This app is found on your personal Windows Computer, if you are using a Mac you will need to install Microsoft Remote Desktop. Once you copy in the IP clik okay and sign in with a different user. Then enter the user you created in Azure. The user I created is called Client, with the password: @dm1n1strat0r.
 </p>
 <p>
 <h4>Login</h4>

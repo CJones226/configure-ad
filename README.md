@@ -424,11 +424,85 @@ While the other VM resets, head on over to Domain Controller and navigate to "Ac
 <br />
 
 <h2>Setting Up Remote Desktop Users</h2>
-
+<p>
+To set up remote desktop users you must be signed into Client as example.com\john_doe
+</p>
+<p>
+<h4>Remote Desktop</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/07623781-719e-4429-be2e-2cb2249646fd" height="60%" width="60%"/>
+</p>
+<p>
+To get to this page all you have to do is right click on the Windows icon and click on system. Within the system tab you will click on Remote Desktop on the right hand side of the console.
+</p>
+<p>
+<h4>User Access</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/31be6311-33c2-4158-91bb-e29fbfb51d29" height="60%" width="60%"/>
+</p>
+<p>
+Down at the bottom of this page click the link to 'Select users that can remotely access this PC'. Then you will add the Domain Users, and click ok.
+</p>
 <br />
 
-
-
+<h2>Adding Users</h2>
+<p>
+Now we will add users to the Domain. This will be users that can log in to "Client" with any username and password. You can go in to the Server window and edit it within the Organization Units, but for this we will run a script. and for that you should be using DomainController and **NOT** Client.
+</p>'
+<p>
+<h4>Windows PowerShell ISE</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/aeedd105-d689-4f1c-9231-b76a2153ef7a" height="60%" width="60%"/>
+</p>
+<p>
+On DomainController you will want to search for "Windows PowerShell ISE" and run it as administrator.
+</p>
+<p>
+<h4>PowerShell Script</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/b070d666-8f50-46f3-87d0-852d1abd6202" height="60%" width="60%"/>
+</p>
+<p>
+When PowerShell opens you will then want to add a script, this will be the little icon underneath File, click there to open a new script.
+</p>
+<p>
+<h4>Script</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/1044f62e-0041-4a09-8469-bc11b1ebd6f7" height="60%" width="60%"/>
+</p>
+<p>
+Upon creating the new Script you will want to navigate to this url: "https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1" and copy this script and paste it in. I created 100 users, but it is set to creat 10,000 users. You can chose how many you want to create, it is only meant to simulate a business with multiple users. Note the password for each user is "Password1"
+</p>
+<p>
+<h4>Picking a User</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/ea35eebc-5792-42a1-889c-59159594fe39" height="60%" width="60%"/>
+</p>
+<p>
+When you run the script you will see a list of new users like this, I am going to pick this random one to sign in with on Client.
+</p>
+<p>
+<h4>Signing in on Client</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/57bf5506-4bc3-4e76-b1f5-ee967f690c80" height="60%" width="60%"/>
+</p>
+<p>
+As you can see I am logging in with this random user: Job Gir, and his username is: example.com\job.gir with a password of: Password1
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/42c64eb7-d4f3-470e-89ac-054e5b9d0527" height="60%" width="60%"/>
+</p>
+<p>
+With that done you have just Installed Active Directory, added Admins and Users, have allowed for Network Communication, and added a computer to a Domain. Not to mention added a long list of users to the Domain that can all use different credentials to log in on the same machine. That is how you configure and run Active Directory with Microsoft Azure Virtual Machines.
+</p>
+<br />
 
 
 

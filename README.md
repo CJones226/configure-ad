@@ -119,7 +119,7 @@ Navigate to DomainController\Network settings\Private IP address. This is the IP
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/7ef93632-5e2d-4bd7-ad57-cac0ce9fdc94" height="60%" width=60%"/>
 </p>
 <p>
-After you have the private IP Address of the DomainController you should then find the Public IP of Client so you can connect using Remote Desktop Connection.
+After you have the private IP Address of the DomainController you should then find the Public IP of Client so you can connect using Remote Desktop Connection. This IP can be found in Client\Overview.
 </p>
 <p>
 <h4>Remote Desktop Connection</h4>

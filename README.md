@@ -86,7 +86,7 @@ Create the Client Computer, this will be the machine that we will add to the Dom
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/1ff18143-d5b4-46c3-8bec-307d1913518c" height="60%" width="60%"/>
 </p>
 <p>
-I made the username 'Client' matching the Virtual Machine Name, and the password is the same as DomainController: @dm1n1strat0r
+I made the username 'Client' and the password is the same as before.
 </p>
 <p>
 <h4>Virtual Network</h4>

@@ -68,7 +68,7 @@ I set the username as 'DC-1' and the password as '@dm1n1strat0r' to make them ea
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/300ecc2c-9bec-4bbb-ba8d-4a0b54913496" height="60%" width="60%"/>
 </p>
 <p>
-Once the Virtual Machine is set up it is necessary to set the IP Configuration to static instead of dynamic, so that the IP will never change. This makes it easy for the Client Computer to connect to the Domain Controller with the same IP every single time. Your path to this setting is Home\DomainController\Network settings\domaincontroller631_z1\IP configurations\ipconfig1
+Once the Virtual Machine is set up it is necessary to set the IP Configuration to static instead of dynamic, so that the IP will never change. This makes it easy for the Client Computer to connect to the Domain Controller with the same IP every single time. Your path to this setting is: "Home\DomainController\Network settings\domaincontroller631_z1\IP configurations\ipconfig1"
 </p>
 <p>
 <h3>Client Computer</h3>

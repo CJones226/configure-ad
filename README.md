@@ -59,7 +59,7 @@ Next you can create the Domain Controller, call it whatever you like, but to kee
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/8bcdb894-37b3-4804-8511-7d21494c0b65" height="60%" width="60%"/>
 </p>
 <p>
-I set the username as 'DC-1' and the password as '@dm1n1strat0r' to make them easy to remember when we are loggin in with Remote Desktop Connection. Alternatively you could open a notepad and write down all the information. Then you can review and create the machine.
+I set the username as 'DC-1' and the password as '@dm1n1strat0r' to make them easy to remember when we are logging in with Remote Desktop Connection. Alternatively you could open a notepad and write down all the information. Then you can review and create the machine.
 </p>
 <p>
 <h4>Configuring IP</h4>

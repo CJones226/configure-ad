@@ -140,13 +140,22 @@ Once you find that you can copy the IP into Remote Desktop Connection. This app 
 Click on sign in with different user, and enter the credentials we created before. For me it is username: "Client" with the password: "@dm1n1strat0r" Now that you are inside the VM you can setup the OS, just turn off all settings and continue.
 </p>
 <p>
+<h4>Command Prompt</h4>
+</p>
+<p>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/46001ab2-6191-44e1-8044-d78e64d22b19" height="60%" width="60%"/>
+</p>
+<p>
+Once you are in the computer you can press the keys windows+r and type cmd, this will open a comand prompt which we will use to try and ping the DomainController.
+</p>
+<p>
 <h4>Pinging DomainController</h4>
 </p>
 <p>
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/41c5fab7-8f41-419f-8d96-37c1e500edc3" height="60%" width="60%"/>
 </p>
 <p>
-Once you are in the computer you can press the keys windows+r and type cmd. When the window opens, type the command: ping -t 10.0.0.4 the last four numbers are the DomainControllers private IP address. It will correspond to whatever yours is, **IT MAY NOT BE 10.0.0.4** this is just what it is for me. It will fail. Leave it running and connect to the DomainController using the same method we used to connect to the Client computer. Find the public Ip Address, and plug it in to Remote Desktop Connection. For this VM I used the username: DC-1 and the Password: @dm1n1strat0r
+When the window opens, type the command: ping -t 10.0.0.4 the last four numbers are the DomainControllers private IP address. It will correspond to whatever yours is, **IT MAY NOT BE 10.0.0.4** this is just what it is for me. Note that it will fail. Leave it running and connect to the DomainController using the same method we used to connect to the Client computer. Find the public Ip Address in DomainController\Overview, and plug it in to Remote Desktop Connection. Then sign in with the proper credentials; I used the username: DC-1 and the Password: @dm1n1strat0r
 </p>
 <p>
 <h4>Windows Defender Firewall with Advanced Security</h4>

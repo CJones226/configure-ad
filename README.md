@@ -423,8 +423,9 @@ While the other VM resets, head on over to Domain Controller and navigate to "Ac
 </p>
 <br />
 
+<h2>Setting Up Remote Desktop Users</h2>
 
-
+<br />
 
 
 

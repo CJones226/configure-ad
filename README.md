@@ -206,7 +206,7 @@ On the home page of Server Manager there is a "Add Roles and Features" button, s
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/aca174d1-e4f2-4884-a9d0-1b40ce28a9e6" height="60%" width="60%"/>
 </p>
 <p>
-In the upper right hand corner of Server Manager there will be a little flag with a one next to it. Click on that and select 'Promote this server to a domain controller'.
+Once the install is finished there will be a little flag with a one next to it in the upper righ corner of Server Manager. Click on that and select 'Promote this server to a domain controller'.
 </p>
 <p>
 <h4>Add New Forest</h4>
@@ -224,7 +224,7 @@ Next you will want to add a new forest, and call the root domain name whatever y
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/9b1f1202-79a9-47b8-9f23-f605bc92fb9c" height="60%" width="60%"/>
 </p>
 <p>
-Next we will set the password, but it will not be that important as we will not use it again in this project. However, if you were to use this in an actual setting the password would be important. In this case i made it Password1
+Next we will set the password, in this case I made it Password1.
 </p>
 <p>
 <h4>DNS Delegation</h4>
@@ -260,10 +260,13 @@ This page should auto populate as well, do not select any options and click next
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/25f1d7ac-2303-4afc-a91b-2e01d2431469" height="605" width="60%"/>
 </p>
 <p>
-Now that all that is done you can click install. When it begins it may take a while to complete, but once done it will become a proper Domain Controller. The system may need to restart after this, you will just have to log back in afterwards. This time using the Domain we just created.
+Now that all that is done you can click install. When it begins it may take a while to complete, but once done it will become a proper Domain Controller. The system may need to restart after this, you will just have to log back in afterwards.
 </p>
 <p>
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/a6fafa1b-1245-43f4-9f81-4f2f9122fb97" heigt="60%" width="60%"/>
+</p>
+<p>
+Login to the virtual machine this time using example.com\DC-1, @dm1n1strator    
 </p>
 <br />
 
@@ -275,7 +278,10 @@ Now we can add a user who will be the admin on the Domain, to do that we need to
 <h4>Active Directory Users and Computers</h4>
 </p>
 <p>
-<img src="https://github.com/CJones226/configure-ad/assets/158533476/19548dac-c5d1-45c2-889f-7b12ea847bb6" height="60%" width="60%"/>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/19548dac-c5d1-45c2-889f-7b12ea847bb6" height="80%" width="60%"/>
+</p>
+<p>
+Click on 'Tools' in the upper right corner, and then select "Active Directory Users and Computers".
 </p>
 <p>
 <h4>Add Organizational Units</h4>
@@ -284,7 +290,7 @@ Now we can add a user who will be the admin on the Domain, to do that we need to
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/8c0eaa34-803a-47aa-b3b5-aff3dc9de443" height="60%" width="60%"/>
 </p>
 <p>
-Once you make it into user and computers you will want to selet the file with the name of your domain on it. In my case that would be 'example' right click on it and select new and then organizational unit.
+Once inside you will want to select the file on the left hand side with the name of your domain on it. In my case that would be 'example' right click on it and select new and then organizational unit.
 </p>
 <p>
 <h4>Employees and Users</h4>
@@ -302,7 +308,7 @@ We are going to create two new organizational units, one called _EMPLOYEES and a
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/bc0402d9-834e-48b7-b8c4-9d8e2fede314" height="60%" width="60%"
 </p>
 <p>
-Next we need to add a new User that we can make the admin.
+Next we need to add a new User that will be the admin.
 </p>
 <p>
 <h4>New User</h4>
@@ -352,7 +358,7 @@ Select 'Member Of' 'Add' then type 'Domain Admins' and then ok
 <h4>John Doe Login</h4>
 </p>
 <p>
-<img src="https://github.com/CJones226/configure-ad/assets/158533476/d66ba841-7106-450d-afb9-1ee6ce998619" height="60%" width="60%"/>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/3d04021c-8de2-46fb-8787-06e10028095e" height="60%" width="60%"/>
 </p>
 <p>
 Now that we have done that John Doe can now login to the Client Computer using the credentials we created: "example.com\john_admin" "Password1" if done correctly it should login with no problem. We have successfully added an Admin to the Domain
@@ -377,7 +383,7 @@ We are going to set the DNS of Client to the IP of the Domain Controller, to do 
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/ee44df05-db8b-41d0-b370-850e8a4e56ea" height="60%" width="60%"/>
 </p>
 <p>
-Navigate in Azure to Client\Network settings\client512_z1\DNS servers then select custom and add the IP address of the Domain Controller
+Navigate in Azure to Client\Network settings\client512_z1\DNS servers then select custom and add the IP address of the Domain Controller. This will set the DNS of Client to DomainController. 
 </p>
 <p>
 <h4>Client System</h4>
@@ -422,7 +428,7 @@ You will need to restart the Virtual Mahcine for this to take effect, it may tak
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/74be5e64-d950-45c2-aa4e-92242ea6f9ae" height="60%" width="60%"/>
 </p>
 <p>
-While the other VM resets, head on over to Domain Controller and navigate to "Active Directory Users and Computers" select "example.com" then "Computers" and ensure that "Client" is within the Organizational Unit. If it is, then you have successfully added Client to the Domain. Next time you login to client you will use john_admin.
+While the other VM resets, head on over to Domain Controller and navigate to "Active Directory Users and Computers" select "example.com" then "Computers" and ensure that "Client" is within the Organizational Unit. If it is, then you have successfully added Client to the Domain. Next time you login to Client you will use john_admin.
 </p>
 <p>
 <h4>Credentials</h4>
@@ -443,7 +449,7 @@ To set up remote desktop users you must be signed into Client as example.com\joh
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/07623781-719e-4429-be2e-2cb2249646fd" height="60%" width="60%"/>
 </p>
 <p>
-To get to this page all you have to do is right click on the Windows icon and click on system. Within the system tab you will click on Remote Desktop on the right hand side of the console.
+To get to this page all you have to do is right click on the Windows icon and click on System. Within the System tab you will click on Remote Desktop on the right hand side of the console.
 </p>
 <p>
 <h4>User Access</h4>
@@ -458,7 +464,7 @@ Down at the bottom of this page click the link to 'Select users that can remotel
 
 <h2>Adding Users</h2>
 <p>
-Now we will add users to the Domain. This will be users that can log in to "Client" with any username and password. You can go in to the Server window and edit it within the Organization Units, but for this we will run a script. and for that you should be using DomainController and **NOT** Client.
+Now we will add users to the Domain. This will be users that can log in to "Client" with any username and password. You can go in to the Server window and edit it within the Organization Units, but for this we will run a script, and for that you should be using DomainController and **NOT** Client.
 </p>'
 <p>
 <h4>Windows PowerShell ISE</h4>
@@ -467,16 +473,16 @@ Now we will add users to the Domain. This will be users that can log in to "Clie
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/aeedd105-d689-4f1c-9231-b76a2153ef7a" height="60%" width="60%"/>
 </p>
 <p>
-On DomainController you will want to search for "Windows PowerShell ISE" and run it as administrator.
+On DomainController you will want to search for "Windows PowerShell ISE" right click on it to run it as administrator.
 </p>
 <p>
 <h4>PowerShell Script</h4>
 </p>
 <p>
-<img src="https://github.com/CJones226/configure-ad/assets/158533476/b070d666-8f50-46f3-87d0-852d1abd6202" height="60%" width="60%"/>
+<img src="https://github.com/CJones226/configure-ad/assets/158533476/b070d666-8f50-46f3-87d0-852d1abd6202" height="80%" width="60%"/>
 </p>
 <p>
-When PowerShell opens you will then want to add a script, this will be the little icon underneath File, click there to open a new script.
+When PowerShell opens you will then want to add a script, this will be the little icon underneath 'File', click there to open a new script.
 </p>
 <p>
 <h4>Script</h4>
@@ -485,7 +491,7 @@ When PowerShell opens you will then want to add a script, this will be the littl
 <img src="https://github.com/CJones226/configure-ad/assets/158533476/1044f62e-0041-4a09-8469-bc11b1ebd6f7" height="60%" width="60%"/>
 </p>
 <p>
-Upon creating the new Script you will want to navigate to this url: "https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1" and copy this script and paste it in. I created 100 users, but it is set to creat 10,000 users. You can chose how many you want to create, it is only meant to simulate a business with multiple users. Note the password for each user is "Password1"
+Upon creating the new Script you will want to navigate to this url: "https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1" and copy this script and paste it in. I created 100 users, but it is set to create 10,000 users. You can chose how many you want to create, it is only meant to simulate a business with multiple users. Note the password for each user is "Password1"
 </p>
 <p>
 <h4>Picking a User</h4>
